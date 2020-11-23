@@ -13,7 +13,12 @@ var stoneimage;
 var stone1;
 var slingshot;
 var mango1;
-
+var mango;
+var mango2;
+var mango3;
+var mango4;
+var mango5;
+var mango6;
 function preload()
 {
 	boyimage=loadImage("boy.png");
@@ -53,11 +58,11 @@ function draw() {
  //slingshot.display();
  detectollision(stone1,mango);
  detectollision(stone1,mango1);
- console.log(detectollision(stone1,mango))
+ console.log(detectollision(stone1,mango));
   drawSprites();
  
 }
-/*function mouseDragged(){
+function mouseDragged(){
     if (gameState!=="launched"){
         Matter.Body.setPosition(stone1.body, {x: mouseX , y: mouseY});
     }
@@ -75,7 +80,7 @@ function keyPressed(){
        gameState="onSling";
 
     }
-}*/
+}
 
 function detectollision(lstone,lmango){
     //mango.body.Position=lmango.body.position;

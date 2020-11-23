@@ -5,15 +5,22 @@ class Stone{
   //}
         this.x= x;
         this.y= y;
-        this.body=Bodies.rectangle(x,y,20,20,{isStatic:false});
+        this.radius=30;
+        this.body=Bodies.circle(x,y,30,{isStatic:false});
         World.add(world,this.body);
 
     }
      display(){
      
         imageMode(CENTER);
-        image(stoneimage,this.x,this.y,50,50);
-        this.x = mouseX;
-        this.y = mouseY;
+       // image(stoneimage,this.x,this.y,30,30);
+        //this.x = mouseX;
+        //this.y = mouseY;
+        var stonepos=this.body.position; 
+        push()
+         translate(stonepos.x, stonepos.y);
+       //  ellipseMode(RADIUS) 
+      image(this.image,0,0,this.radius,this.radius);
+         pop() ;
     }
 }
