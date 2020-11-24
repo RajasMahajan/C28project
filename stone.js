@@ -5,8 +5,8 @@ class Stone{
   //}
         this.x= x;
         this.y= y;
-        this.radius=30;
-        this.body=Bodies.circle(x,y,30,{isStatic:false});
+        this.radius=50;
+        this.body=Bodies.circle(x,y,50,{isStatic:false});
         World.add(world,this.body);
 
     }
@@ -20,7 +20,7 @@ class Stone{
         push()
          translate(stonepos.x, stonepos.y);
        //  ellipseMode(RADIUS) 
-      image(this.image,0,0,this.radius,this.radius);
+      image(stoneimage,0,0,this.radius,this.radius);
          pop() ;
     }
 }

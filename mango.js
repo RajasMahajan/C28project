@@ -1,9 +1,9 @@
 class Mango{
-    constructor(x,y){
+    constructor(x,y,r){
         this.x=x;
         this.y=y;
         this.radius=40;
-        this.body=Bodies.circle(x,y,40,{isStatic:false});
+        this.body=Bodies.circle(x,y,40,r);
         World.add(world,this.body);
     }
     display(){

@@ -37,11 +37,16 @@ function setup() {
 	//Create the Bodies Here.
 	boy=Bodies.rectangle(200,400,50,50);
     tree=Bodies.rectangle(550,400,50,50);
-    mango= new Mango(600,350);
-    mango1=new Mango(650,360);
+    mango= new Mango(600,350,{isStatic:true});
+    mango1=new Mango(640,400,{isStatic:true});
+    mango2=new Mango(730,420,{isStatic:true});
+    mango3=new Mango(675,335,{isStatic:true});
+    mango4=new Mango(800,400,{isStatic:true});
+    mango5=new Mango(550,430,{isStatic:true});
+    mango6=new Mango(750,340,{isStatic:true});
 	stone1= new Stone(85,565);
 	Engine.run(engine);
-	slingshot = new SlingShot(stone1.body,{x:500, y:350});
+	slingshot = new SlingShot(stone1.body,{x:80, y:567});
 }
 
 
@@ -54,11 +59,16 @@ function draw() {
   image(boyimage,30,500,250,250);
   stone1.display();
   mango.display();
+  mango2.display();
+  mango3.display();
   mango1.display();
- //slingshot.display();
+  mango4.display();
+  mango5.display();
+  mango6.display();
+ slingshot.display();
  detectollision(stone1,mango);
  detectollision(stone1,mango1);
- console.log(detectollision(stone1,mango));
+ //console.log(detectollision(stone1,mango));
   drawSprites();
  
 }
