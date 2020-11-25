@@ -7,6 +7,8 @@ class Mango{
         World.add(world,this.body);
     }
     display(){
+        //ellipseMode(CENTER);
+        //ellipse(this.x,this.y,40,40)
         imageMode(CENTER);
         image(mangoimage,this.x,this.y,40,40);
     }
