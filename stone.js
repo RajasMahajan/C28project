@@ -11,15 +11,15 @@ class Stone{
 
     }
      display(){
-     
-        imageMode(CENTER);
+      ellipseMode(CENTER); 
+      imageMode(CENTER);
        // image(stoneimage,this.x,this.y,30,30);
         //this.x = mouseX;
         //this.y = mouseY;
         var stonepos=this.body.position; 
         push()
          translate(stonepos.x, stonepos.y);
-       //  ellipseMode(RADIUS) 
+     
       image(stoneimage,0,0,this.radius,this.radius);
          pop() ;
     }

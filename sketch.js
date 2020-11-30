@@ -38,17 +38,17 @@ function setup() {
 	//Create the Bodies Here.
     boy=Bodies.rectangle(200,400,50,50);
     tree=Bodies.rectangle(550,390,50,50);
-    ground=Bodies.rectangle(500,690,1000,20,{isStatic:true});
+    ground=Bodies.rectangle(500,700,1000,20,{isStatic:true});
     World.add(world,ground);
-    mango= new Mango(600,350,{isStatic:false});
-    mango1=new Mango(640,400,{isStatic:false});
-    mango2=new Mango(730,420,{isStatic:false});
-    mango3=new Mango(675,335,{isStatic:false});
-    mango4=new Mango(800,400,{isStatic:false});
-    mango5=new Mango(550,430,{isStatic:false});
-    mango6=new Mango(750,340,{isStatic:false});
+    mango= new Mango(600,350);
+    mango1=new Mango(640,400);
+    mango2=new Mango(730,420);
+    mango3=new Mango(675,335);
+    mango4=new Mango(800,400);
+    mango5=new Mango(550,430);
+    mango6=new Mango(750,340);
 	stone1= new Stone(85,565);
-	Engine.run(engine);
+//	Engine.run(engine);
 	slingshot = new SlingShot(stone1.body,{x:80, y:567});
 }
 
@@ -61,7 +61,7 @@ function draw() {
   image(treeimage,450,280,460,430);
   image(boyimage,30,500,250,250);
   rectMode(CENTER);
-  rect(ground.position.x,ground.position.y,1000,20);
+  rect(ground.position.x,ground.position.y-10,1000,20);
   stone1.display();
   mango.display();
   mango2.display();
@@ -109,7 +109,7 @@ function detectollision(lstone,lmango){
     stone1.body.Position=lstone.body.position;
 
   var   distance=dist(lstone.body.position.x,lstone.body.position.y,lmango.body.position.x,lmango.body.position.y);
-  if(distance<=lmango.radius,lstone.radius){
+  if(distance<=lmango.radius+lstone.radius){
       Matter.Body.setStatic(lmango.body,false);
   }
 }
